@@ -1,0 +1,42 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.jac, .kemel {
+	display: flex;
+	padding-bottom: 15px;
+	align-items: center;
+	text-align: justify
+}
+
+.kemel {
+	flex-direction: row-reverse
+}
+
+.description {
+	padding: 0px 10px 0px 10px;
+	font-family: 'Poiret One', cursive;
+}
+
+@media(min-width: 768px) {
+	.container {
+		flex-direction: row
+	}
+
+	.jac, .kemel {
+		width: 50vw;
+		flex-direction: column;
+		padding: 20px
+	}
+
+	.jac {
+		align-items: flex-start;
+		
+	}
+
+	.kemel {
+		align-items: flex-end;
+	}
+}

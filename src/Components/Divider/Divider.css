@@ -1,0 +1,10 @@
+@media(min-width: 767px) {
+	.dashed {
+		width: 0px;
+		height: 150vh;
+		border: 1px dashed;
+		margin-left: 64px;
+		position: fixed;
+		margin-left: 50vw;
+	}
+}
