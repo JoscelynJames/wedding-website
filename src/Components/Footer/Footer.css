@@ -1,0 +1,63 @@
+.container {
+	height: 40vh;
+	width: 100vw;
+	background-color: rgb(238, 238, 238);
+	-webkit-clip-path: polygon(0 17%, 100% 0, 100% 100%, 0% 100%);
+	clip-path: polygon(0 17%, 100% 0, 100% 100%, 0% 100%);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	font-family: 'Poiret One', cursive;
+	text-align: center
+}
+
+.map {
+	height: 40vh;
+	width: auto;
+	margin: 8vh 0px 0 5vh;
+	border: 2px solid rgb(192, 192, 192)
+}
+@media(min-width: 1050px) {
+	.container {
+		height: 60vh;
+	}
+}
+
+/* 
+@media(min-width: 677px) {
+
+	.map {
+		height: 20vh
+	}
+} */
+
+@media(max-width: 1024px) {
+	.map {
+		height: 20vh
+	}
+}
+
+.mapMarker{
+	height: 30px;
+}
+
+.location {
+	display: flex;
+	align-items: center;
+}
+
+.socialMedia {
+	display: flex;
+	justify-content: space-around;
+}
+
+.icon {
+	height: 30px;
+}
+
+.right {
+	display: flex;
+	flex-direction: column;
+	height: 40vh;
+	justify-content: space-around;
+}

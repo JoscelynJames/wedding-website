@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Avatar.css';
 
 const Avatar = (props) => {
-	console.log(props)
 	return (
 		<div className={styles.container}>
 			<img className={styles[props.status]} src={props.img} alt="Person"/>

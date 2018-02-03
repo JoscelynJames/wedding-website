@@ -1,0 +1,42 @@
+.container {
+	text-align: center;
+	height: 45vh;
+	width: 80vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.card {
+	font-size: 70px;
+	font-family: 'Amatic SC', cursive;
+	padding: 25px
+}
+
+.time {
+	display: flex;
+	justify-content: space-around;
+}
+
+.days {
+	border-bottom: 1px dashed rgb(182, 182, 182);
+}
+
+.text {
+	font-size: 1rem;
+}
+
+@media(min-width: 766px) {
+	.container {
+		width: 38vw;
+		height: 40vh;
+		margin-top: 108px;
+	}
+
+	.card {
+		font-size: 6rem;
+	}
+
+	.text {
+		font-size: 1.5rem;
+	}
+}
