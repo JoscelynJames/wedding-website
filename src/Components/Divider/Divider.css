@@ -1,7 +1,7 @@
 @media(min-width: 767px) {
 	.dashed {
 		width: 0px;
-		height: 107vh;
+		height: 380px;
 		border: 1px dashed;
 		margin-left: 64px;
 		position: absolute;

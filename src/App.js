@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
 //components
-import Divider from './Components/Divider/Divider';
-import Hero from './Components/Hero/Hero';
-import AboutThem from './Components/AboutThem/AboutThem';
-import Countdown from './Components/Countdown/Countdown';
-import Footer from './Components/Footer/Footer';
-
+import HomePage from './Components/HomePage';
+import Rsvp from './Components/Rsvp/Rsvp';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Divider />
-        <Hero />
-        <AboutThem />
-        <Countdown />
-        <Footer />
+        <Route path='/' exact component={HomePage} />
+        <Route path='/rsvp' exact component={Rsvp} />
       </div>
     );
   }

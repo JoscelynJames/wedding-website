@@ -8,7 +8,8 @@
 	align-items: center;
 	justify-content: space-around;
 	font-family: 'Poiret One', cursive;
-	text-align: center
+	text-align: center;
+	margin-top: 50px;
 }
 
 .map {
@@ -17,6 +18,7 @@
 	margin: 8vh 0px 0 5vh;
 	border: 2px solid rgb(192, 192, 192)
 }
+
 @media(min-width: 1050px) {
 	.container {
 		height: 60vh;

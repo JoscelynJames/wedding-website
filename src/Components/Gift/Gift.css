@@ -1,0 +1,13 @@
+.container {
+	height: 30vh;
+	width: 80vw;
+	background-color: white;
+	text-align: center;
+}
+
+@media(min-width: 1024px) {
+	.container {
+		width: 40vw;
+		height: 33vh;
+	}
+}

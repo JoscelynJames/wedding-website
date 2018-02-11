@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import styles from './Footer.css';
 import map from '../../assets/imgs/map.png';
-import mapMarker from '../../assets/imgs/map-marker.png';
+import mapMarker from '../../assets/imgs/map-marker.svg';
 import facebook from '../../assets/imgs/facebook.svg';
 import instagram from '../../assets/imgs/instagram.svg';
 import twitter from '../../assets/imgs/twitter.svg';
+import spotify from '../../assets/imgs/spotify.svg';
 
 class Footer extends Component {
 	constructor(props) {
@@ -60,6 +61,9 @@ class Footer extends Component {
 						</a>
 						<a href="">
 							<img className={styles.icon} src={twitter} alt="twitter" />
+						</a>
+						<a href="">
+							<img className={styles.icon} src={spotify} alt="twitter" />
 						</a>
 					</div>
 				</div>

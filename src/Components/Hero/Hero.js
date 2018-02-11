@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './Hero.css';
+import { withRouter } from 'react-router';
 
 import Button from '../Button/Button';
 
-const Hero = () => {
-	return (
-		<div className={styles.heroContainer}>
-			<div className={styles.title}>
-				Jac and Kem
+class Hero extends Component {
+	routeToRsvp() {
+		this.props.history.push('/rsvp');
+	}
+
+	render() {
+		return (
+			<div className={styles.heroContainer}>
+				<div className={styles.title}>
+					Jac and Kem
+				</div>
+				<div onClick={() => this.routeToRsvp()}>
+					<Button text="RSVP"/>
+				</div>
 			</div>
-			<Button text="RSVP"/>
-		</div>
-	);
+		);
+	}
 };
 
-export default Hero;
+export default withRouter(Hero);

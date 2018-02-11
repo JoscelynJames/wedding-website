@@ -1,0 +1,38 @@
+div {
+	font-family: 'Poiret One', cursive;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 2px dashed rgb(134, 134, 134);
+	width: 80vw;
+	margin: auto;
+	margin-bottom: 5px;
+}
+
+.calendar {
+	height: 60px;
+	padding: 30px
+}
+
+.date {
+	text-align: center;
+}
+
+.pin {
+	height: 40px;
+	padding: 30px;
+}
+
+.shirt {
+	height: 40px;
+	padding: 30px;
+}
+
+@media(min-width: 1024px) {
+	.container {
+		width: 40vw;
+	}
+}
