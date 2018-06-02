@@ -48,14 +48,14 @@ class Footer extends Component {
 			<div className={styles.container}>
 			{this.state.showMap ? (
 				<div className={styles.map}>
-					<GoogleMapReact defaultCenter={ this.location } defaultZoom={ this.zoom } marker={this.location}>
+						<GoogleMapReact bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }} defaultCenter={ this.location } defaultZoom={ this.zoom } marker={this.location}>
 						<Marker lat={this.location.lat} lng={this.location.lng}></Marker>
 					</GoogleMapReact>
 				</div>
 			)
 			: null}
 				<div className={styles.right}>
-					<a href="https://www.google.com/maps/place/Chief+Hosa+Lodge/@39.7113127,-105.3132514,15z/data=!4m7!3m6!1s0x0:0x2a89b84e1a69e9a4!5m1!1s2018-05-13!8m2!3d39.7113127!4d-105.3132514" target="_blank">
+					<a href="https://www.google.com/maps/place/Chief+Hosa+Lodge/@39.7113127,-105.3132514,15z/data=!4m7!3m6!1s0x0:0x2a89b84e1a69e9a4!5m1!1s2018-05-13!8m2!3d39.7113127!4d-105.3132514" rel="noopener noreferrer" target="_blank">
 						<div>
 							<h2>Chief Hosa lodge</h2>
 							<div className={styles.location}>
