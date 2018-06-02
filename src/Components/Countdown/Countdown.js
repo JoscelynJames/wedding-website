@@ -14,7 +14,7 @@ class Countdown extends Component {
 	}
 
 	componentDidMount() {
-		var deadline = new Date("Jan 5, 2019 15:37:25").getTime();
+		var deadline = new Date("Jan 18, 2019 14:37:25").getTime();
 		setInterval(() => {
 			var now = new Date().getTime();
 			var t = deadline - now;

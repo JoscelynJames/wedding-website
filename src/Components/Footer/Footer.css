@@ -9,12 +9,21 @@
 	justify-content: space-around;
 	font-family: 'Poiret One', cursive;
 	text-align: center;
-	margin-top: 50px;
+	margin-top: 40px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 .map {
 	height: 40vh;
-	width: auto;
+	width: 40vw;
 	margin: 8vh 0px 0 5vh;
 	border: 2px solid rgb(192, 192, 192)
 }

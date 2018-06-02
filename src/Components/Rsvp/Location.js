@@ -9,7 +9,7 @@ const Location = (props) => {
 				<img className={styles.pin} src={pin} alt="" />
 			</div>
 			<div className={styles.location}>
-				<h3>6252 W 104th Ave Westminster, CO 80020</h3>
+				<h3>27661 Genesee Ln, Golden, CO 80401</h3>
 			</div>
 		</div>
 	)

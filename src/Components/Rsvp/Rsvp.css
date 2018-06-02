@@ -31,6 +31,11 @@ div {
 	padding: 30px;
 }
 
+
+.back {
+	width: 100vw;
+}
+
 @media(min-width: 1024px) {
 	.container {
 		width: 40vw;

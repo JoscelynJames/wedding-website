@@ -1,17 +1,13 @@
 .container {
 	padding: 5px;
 	font-family: 'Poiret One', cursive;
+	width: 180px;
 }
 
 .important {
-	height: 150px;
-	width: 150px;
-	border-radius: 100px;
-	/* padding: 7px; */
+    height: 180px;
+    width: 180px;
+    border-radius: 100px;
 }
 
-.reqular {
-	height: 100px;
-	width: 100px;
-}
 

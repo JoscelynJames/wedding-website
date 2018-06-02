@@ -1,13 +1,27 @@
 .container {
-	height: 30vh;
+	height: 100%;
 	width: 80vw;
-	background-color: white;
+    display: flex;
+    flex-flow: column;
+	align-items: center;
+	padding-bottom: 30px;
+}
+
+.row {
+	width: 80%;
+	display: flex;
+    justify-content: space-between;
+}
+
+.details {
+	border-bottom: 1px dashed;
+    width: 100%;
 	text-align: center;
+	padding-bottom: 5px;
 }
 
 @media(min-width: 1024px) {
 	.container {
 		width: 40vw;
-		height: 33vh;
 	}
 }

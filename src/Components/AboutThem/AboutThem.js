@@ -3,12 +3,12 @@ import styles from './AboutThem.css';
 import jac from '../../assets/imgs/jac.jpg'
 import kemel from '../../assets/imgs/kemel.jpg'
 import Avatar from '../Avatar/Avatar';
-import Divider from '../Divider/Divider'
+
 class AboutThem extends Component {
 	render() {
 		return (
 			<div>
-			<Divider />
+			{/* <Divider /> */}
 				<div className={styles.container}>
 					<div className={styles.jac}>
 						<Avatar img={jac} status="important"/>

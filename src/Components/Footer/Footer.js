@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import styles from './Footer.css';
-import map from '../../assets/imgs/map.png';
 import mapMarker from '../../assets/imgs/map-marker.svg';
 import facebook from '../../assets/imgs/facebook.svg';
 import instagram from '../../assets/imgs/instagram.svg';
 import twitter from '../../assets/imgs/twitter.svg';
 import spotify from '../../assets/imgs/spotify.svg';
+import GoogleMapReact from 'google-map-react';
+
+
+const Marker = () => {
+	return (
+		<div>
+			<img className={styles.mapMarker} src={mapMarker} alt="" />
+		</div>
+	);
+}
 
 class Footer extends Component {
 	constructor(props) {
@@ -15,6 +24,8 @@ class Footer extends Component {
 			showMap: false,
 		}
 	};
+	location = { lat: 39.7111, lng: -105.3125 };
+	zoom = 15;
 
 	checkWindow() {
 		if (window.innerWidth > 750) {
@@ -36,22 +47,23 @@ class Footer extends Component {
 		return (
 			<div className={styles.container}>
 			{this.state.showMap ? (
-				<div>
-					<img src={map} alt="ButterFly Pavilion" className={styles.map} />
+				<div className={styles.map}>
+					<GoogleMapReact defaultCenter={ this.location } defaultZoom={ this.zoom } marker={this.location}>
+						<Marker lat={this.location.lat} lng={this.location.lng}></Marker>
+					</GoogleMapReact>
 				</div>
 			)
 			: null}
 				<div className={styles.right}>
-					{/* <div className={styles.wheater}>
-						Wheater
-					</div> */}
-					<div>
-						<h2>ButterFly Pavilion</h2>
-						<div className={styles.location}>
-							<img className={styles.mapMarker} src={mapMarker} alt="" />
-							6252 W 104th Ave<br/> Westminster, CO<br/> 80020
+					<a href="https://www.google.com/maps/place/Chief+Hosa+Lodge/@39.7113127,-105.3132514,15z/data=!4m7!3m6!1s0x0:0x2a89b84e1a69e9a4!5m1!1s2018-05-13!8m2!3d39.7113127!4d-105.3132514" target="_blank">
+						<div>
+							<h2>Chief Hosa lodge</h2>
+							<div className={styles.location}>
+								<img className={styles.mapMarker} src={mapMarker} alt="" />
+								27661 Genesee Ln,<br /> Golden,<br /> CO 80401
+							</div>
 						</div>
-					</div>
+					</a>
 					<div className={styles.socialMedia}>
 						<a href="">
 							<img className={styles.icon} src={facebook} alt="facebook" />

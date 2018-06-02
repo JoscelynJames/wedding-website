@@ -2,18 +2,27 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	border-bottom: 1px dashed;
 }
 
 .jac, .kemel {
 	display: flex;
-	padding-bottom: 15px;
+	flex-direction: column;
+	padding: 15px;
 	align-items: center;
-	text-align: justify
+	text-align: justify;
+	z-index: -1;
 }
 
-.kemel {
-	flex-direction: row-reverse
+.jac {
+	border-right: 1px dashed;
 }
+
+/* .kemel {
+	-webkit-clip-path: polygon(0 53%, 100% 1%, 100% 100%, 0% 100%);
+	clip-path: polygon(0 53%, 100% 1%, 100% 100%, 0% 100%);
+	background-color: grey	
+} */
 
 .description {
 	padding: 0px 10px 0px 10px;
@@ -22,21 +31,21 @@
 
 @media(min-width: 768px) {
 	.container {
-		flex-direction: row
+		flex-flow: row;
+		position: relative;
+		bottom: 100px;
+		height: 350px;
 	}
 
 	.jac, .kemel {
-		width: 50vw;
-		flex-direction: column;
-		padding: 20px
+		width: 49%;
 	}
 
 	.jac {
-		align-items: flex-start;
-		
+		align-items: start
 	}
 
 	.kemel {
-		align-items: flex-end;
+		align-items: flex-end
 	}
 }

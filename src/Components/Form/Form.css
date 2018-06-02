@@ -1,93 +1,52 @@
 .container {
 	display: flex;
-	flex-flow: column;
-	align-items: center;
-	justify-content: space-around;
-	font-family: 'Poiret One', cursive;
-	height: 9vh;
-}
-
-.main {
-	height: 80vh;
-	width: 90vw;
-	/* width: 50vw; */
-	background-color: #F6F6F6;
-	margin: auto;
-	margin-bottom: 30px;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    background-color: #F6F6F6;
+	width: 80%;
+	margin: 0 auto 100px auto
 }
 
 .guests {
-	height: 20vh;
-}
-
-.songs {
-	height: 45vh;
-	/* height: 35vh; */
-}
-
-.song, .name {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-  width: 70vw;
-}
-
-input {
-	height: 3vh;
-	width: 35vw;
-	text-indent: 5px;
-	font-family: 'Poiret One', cursive;
-	font-size: 15px;
+    flex-flow: column;
+    align-items: center;
+    min-height: 180px;
 }
 
 .row {
 	display: flex;
-	align-items: center;
-	width: 80vw;
-	justify-content: space-between;
+    align-items: center;
 }
 
-.x {
-	padding: 10px;
+.songs {
+	display: flex;
+    flex-flow: column;
+    align-items: center;
+	min-height: 300px;
+}
+
+.pointer {
 	cursor: pointer;
 }
 
-.blank {
-	padding: 14px;
+.submit {
+	padding: 20px;
 }
 
-@media(min-width: 1024px) {
-	.main {
-		height: 72vh;
-	}
-	.row {
-		width: 65vw;
-	}
-
-	.song, .name {
-		width: 55vw;
-	}
+.delete {
+	font-size: 25px;
 }
 
-@media(min-width: 1025px) {
-	
-	.main {
-		width: 50vw;
-	}
+.dialog {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
 
-	.songs {
-		height: 35vh;
-	}
-
-	.row {
-		width: 30vw;
-	}
-
-	.song, .name {
-		width: 30vw;
-	}
-
-	input {
-		width: 20vw;
-	}
+.loading {
+	height: 200px;
+	width: 200px;
+	margin-left: 30%;
 }
