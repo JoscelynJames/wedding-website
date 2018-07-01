@@ -3,7 +3,7 @@
     justify-content: center;
     flex-flow: column;
     align-items: center;
-    background-color: #F6F6F6;
+    background-color: #ffffffd4;
 	width: 80%;
 	margin: 0 auto 100px auto
 }
@@ -12,12 +12,13 @@
 	display: flex;
     flex-flow: column;
     align-items: center;
-    min-height: 180px;
+    min-height: 190px;
 }
 
 .row {
 	display: flex;
-    align-items: center;
+	align-items: center;
+	height: 160px;
 }
 
 .songs {
@@ -49,4 +50,19 @@
 	height: 200px;
 	width: 200px;
 	margin-left: 30%;
+}
+
+.double {
+	justify-content: space-around;
+	align-items: center;
+    display: flex;
+    width: 76vw;
+	flex-wrap: wrap;
+	height: 90px;
+}
+
+@media(min-wdith: 565px) {
+	.double {
+		height: 100%
+	}
 }

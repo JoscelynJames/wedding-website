@@ -11,17 +11,26 @@ class Countdown extends Component {
 			minutes: 0,
 			weddingTime: false
 		};
+
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.state.setIntervalFunc);
 	}
 
 	componentDidMount() {
-		var deadline = new Date("Jan 18, 2019 14:37:25").getTime();
-		setInterval(() => {
+		var setIntervalFunc = this.countdown();
+		this.setState({ setIntervalFunc })
+	}
+
+	countdown() {
+		var deadline = new Date("Jan 18, 2019 18:00:00 GMT+01:00").getTime();
+		return setInterval(() => {
 			var now = new Date().getTime();
 			var t = deadline - now;
 			var days = Math.floor(t / (1000 * 60 * 60 * 24));
 			var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 			var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-			// var seconds = Math.floor((t % (1000 * 60)) / 1000);
 			this.setState({
 				days,
 				hours,

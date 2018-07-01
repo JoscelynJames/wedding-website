@@ -9,7 +9,7 @@ const Dress = (props) => {
 				<img className={styles.shirt} src={shirt} alt="" />
 			</div>
 			<div className={styles.dress}>
-				<h3>however</h3>
+				<h3>Business Casual</h3>
 			</div>
 		</div>
 	)

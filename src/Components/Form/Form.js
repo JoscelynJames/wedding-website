@@ -14,7 +14,6 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
 
-
 class Form extends Component {
 	constructor(props) {
 		super(props);
@@ -254,43 +253,47 @@ class Form extends Component {
 
 				<div className={styles.guests}>
 				<h3>Guest(s) Attending</h3>
-				<div>
+				<div className={styles.double}>
 					<div>
-						<TextField id="email" hintText="email@email.com" floatingLabelText="Email" onChange={(e) => this.updateEmail(e)}/>
+						<div>
+							<TextField id="email" hintText="email@email.com" floatingLabelText="Email" onChange={(e) => this.updateEmail(e)}/>
+						</div>
 					</div>
-				</div>
-				<div>
 					<div>
+						<div>
 							<TextField id="phone" hintText="303-555-5555" floatingLabelText="Phone Number" onChange={(e) => this.updatePhone(e)}/>
+						</div>
 					</div>
 				</div>
-				<div>
-					<div>
-							<TextField id="guest1" hintText="Full Name" floatingLabelText="First Guest" onChange={(e) => this.updateGuest1(e)}/>
+					<div className={this.state.plusOne ? styles.double : '' }>
+						<div>
+							<div>
+								<TextField id="guest1" hintText="Full Name" floatingLabelText="First Guest" onChange={(e) => this.updateGuest1(e)} />
+							</div>
+						</div>
+						{this.state.plusOne
+							? (
+								<div className={styles.row}>
+									<div>
+										<TextField id="guest2" hintText="Full Name" floatingLabelText="Second Guest" onChange={(e) => this.updateGuest2(e)} />
+									</div>
+									<div onClick={() => this.handlePlusOne()} className={styles.pointer}>
+										<Delete />
+									</div>
+								</div>
+							)
+							: (
+								<div className={styles.add} onClick={() => this.handlePlusOne()}>
+									<RaisedButton label="Add A Plus One" />
+								</div>
+							)
+						}
 					</div>
-				</div>
-					{this.state.plusOne 
-						? (
-							<div className={styles.row}>
-								<div>
-									<TextField id="guest2" hintText="Full Name" floatingLabelText="Second Guest" onChange={(e) => this.updateGuest2(e)}/>
-								</div>
-								<div onClick={() => this.handlePlusOne()} className={styles.pointer}>
-									<Delete />
-								</div>
-							</div>
-						)
-						: (
-							<div className={styles.add} onClick={() => this.handlePlusOne()}>
-								<RaisedButton label="Add A Plus One" />
-							</div>
-						)
-					}
 				</div>
 				<div className={`${styles.songs}`}>
 						<h3>Song Request</h3>
 							<div className={styles.row}>
-								<div>
+								<div className={styles.double}>
 									<div className={styles.song}>
 										<TextField floatingLabelText="Song Title" onChange={(e) => this.updateSong1(e, 'title')}/>
 									</div>
@@ -303,7 +306,7 @@ class Form extends Component {
 							</div>
 								{this.state.showSong2 ? (
 								<div className={styles.row}>
-									<div>
+									<div className={styles.double}>
 										<div className={styles.song}>
 											<TextField floatingLabelText="Song Title" onChange={(e) => this.updateSong2(e, 'title')}/>
 										</div>
@@ -319,7 +322,7 @@ class Form extends Component {
 								: null}
 								{this.state.showSong3 ? (
 								<div className={styles.row}>
-									<div>
+									<div className={styles.double}>
 										<div className={styles.song}>
 											<TextField floatingLabelText="Song Title" onChange={(e) => this.updateSong3(e, 'title')}/>
 										</div>

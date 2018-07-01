@@ -1,7 +1,7 @@
 .container {
 	height: 40vh;
 	width: 100vw;
-	background-color: rgb(238, 238, 238);
+	background-color: #ffffffd4;
 	-webkit-clip-path: polygon(0 17%, 100% 0, 100% 100%, 0% 100%);
 	clip-path: polygon(0 17%, 100% 0, 100% 100%, 0% 100%);
 	display: flex;

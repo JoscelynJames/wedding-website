@@ -10,7 +10,8 @@
 .row {
 	width: 80%;
 	display: flex;
-    justify-content: space-between;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .details {
@@ -20,8 +21,31 @@
 	padding-bottom: 5px;
 }
 
+.header {
+	width: 30%;
+}
+
+.info {
+	width: 70%;
+}
+
 @media(min-width: 1024px) {
 	.container {
 		width: 40vw;
+	}
+}
+
+@media(max-width: 603px) {
+	.row {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.header {
+	width: fit-content;
+	}
+
+	.info {
+		width: fit-content;
 	}
 }

@@ -16,8 +16,10 @@ class Rsvp extends Component {
 	render() {
 		return (
 			<div>
-				<div className={styles.back} onClick={() => this.goBack()}>
-					<RaisedButton label="Go back"/>
+				<div className={styles.header}>
+					<div className={styles.back} onClick={() => this.goBack()}>
+						<RaisedButton label="Go back"/>
+					</div>
 				</div>
 				<Date />
 				<Location />

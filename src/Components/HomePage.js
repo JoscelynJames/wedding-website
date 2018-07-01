@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 
 import Hero from './Hero/Hero';
-import AboutThem from './AboutThem/AboutThem';
 import Countdown from './Countdown/Countdown';
 import Footer from './Footer/Footer';
 import Gift from './Gift/Gift';
+
+import jandk from '../assets/imgs/jandk-croped.png';
 
 import styles from './HomePage.css';
 
@@ -20,14 +21,17 @@ class HomePage extends Component {
 	render () {
 		return (
 			<div>
-				<div className={styles.header}>
-					<h1 className={styles.names} >Jacque and Kemel Wedding</h1>
-					<div className={styles.button} onClick={() => this.routeToRsvp()}>
-						<RaisedButton label="RSVP" />
+				<div className={styles.headerContainer}>
+					<div className={styles.header}>
+						<div>
+							<img className={styles.headerImage} src={jandk} />
+						</div>
+						<div className={styles.button} onClick={() => this.routeToRsvp()}>
+							<RaisedButton label="RSVP" />
+						</div>
 					</div>
 				</div>
 				<Hero />
-				<AboutThem />
 				<div className={styles.container}>
 					<Countdown />
 					<Gift />

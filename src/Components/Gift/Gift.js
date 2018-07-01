@@ -18,20 +18,20 @@ class Gift extends Component {
 				<div className={styles.container}>
 					<h2 className={styles.details}> The Details </h2>
 					<div className={styles.row}>
-						<h4>When?</h4>
-						<h4>January 18th, 2019 at 6pm</h4>
+						<h3 className={styles.header}>When?</h3>
+						<p className={styles.info}>January 18th, 2019 at 6pm</p>
 					</div>
 					<div className={styles.row}>
-						<h4>Where?</h4>
-						<h4>Cheif Hosa Lodge in Golden Colorado</h4>
+						<h3 className={styles.header}>Where?</h3>
+						<p className={styles.info}>Cheif Hosa Lodge in Golden Colorado</p>
 					</div>
 					<div className={styles.row}>
-						<h4>Dress Code?</h4>
-						<h4>At least shower</h4>
+						<h3 className={styles.header}>Dress Code?</h3>
+						<p className={styles.info}>Business Casual</p>
 					</div>
 					<div className={styles.row}>
-						<h4>Is there food?</h4>
-						<h4>Yes</h4>
+						<h3 className={styles.header}>Is there food?</h3>
+						<p className={styles.info}>Yes</p>
 					</div>
 	
 					<div className={styles.button} onClick={() => this.routeToRsvp()}>
