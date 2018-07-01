@@ -18,7 +18,6 @@
 .row {
 	display: flex;
 	align-items: center;
-	height: 160px;
 }
 
 .songs {
@@ -34,6 +33,8 @@
 
 .submit {
 	padding: 20px;
+	display: flex;
+    justify-content: center;
 }
 
 .delete {
@@ -58,11 +59,17 @@
     display: flex;
     width: 76vw;
 	flex-wrap: wrap;
-	height: 90px;
 }
 
 @media(min-wdith: 565px) {
 	.double {
 		height: 100%
 	}
+}
+
+.attending {
+	display: flex;
+	flex-direction: row;
+	/* width: 50vw; */
+	align-items: center;
 }
