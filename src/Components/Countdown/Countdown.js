@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import moment from 'moment';
+import countdown from 'countdown';
 import styles from './Countdown.css';
+require('moment-countdown');
 
 class Countdown extends Component {	
 	constructor(props) {
@@ -24,17 +27,15 @@ class Countdown extends Component {
 	}
 
 	countdown() {
-		var deadline = new Date("Jan 18, 2019 18:00:00 GMT+01:00").getTime();
+		var deadline = new Date(Date.UTC(2019, 0, 18, 24, 0, 0));
+
 		return setInterval(() => {
-			var now = new Date().getTime();
-			var t = deadline - now;
-			var days = Math.floor(t / (1000 * 60 * 60 * 24));
-			var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+			const countdownTime = moment().countdown(deadline, countdown.DAYS | countdown.HOURS | countdown.MINUTES);
+			
 			this.setState({
-				days,
-				hours,
-				minutes,
+				days: countdownTime.days,
+				hours: countdownTime.hours,
+				minutes: countdownTime.minutes,
 			})
 		}, 1000)
 	}

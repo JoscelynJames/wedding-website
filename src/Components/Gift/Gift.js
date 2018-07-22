@@ -19,7 +19,7 @@ class Gift extends Component {
 					<h2 className={styles.details}> The Details </h2>
 					<div className={styles.row}>
 						<h3 className={styles.header}>When?</h3>
-						<p className={styles.info}>January 18th, 2019 at 6pm</p>
+						<p className={styles.info}>January 18th, 2019 <br/> Ceremony starts at 4pm <br/> Reception starts at 5pm</p>
 					</div>
 					<div className={styles.row}>
 						<h3 className={styles.header}>Where?</h3>

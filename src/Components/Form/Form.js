@@ -5,7 +5,6 @@ import api from '../../api/apiCalls';
 import Confetti from 'react-confetti';
 
 // my components
-// import Song from './Song';
 import Delete from './Delete';
 import Loading from './Loading';
 
@@ -36,6 +35,7 @@ class Form extends Component {
 			song2: { title: null, artist: null },
 			song3: { title: null, artist: null },
 			cantAttend: false,
+			allergies: ''
 		};
 
 	}
@@ -70,7 +70,6 @@ class Form extends Component {
 	}
 
 	handleChange(event) {
-		console.log(event.target.checked)
 		this.setState({ cantAttend: event.target.checked });
 	};
 
@@ -98,6 +97,10 @@ class Form extends Component {
 
 	updateGuest2(e) {
 		this.setState({ guest2: e.target.value});
+	}
+
+	updatAlleries(e) {
+		this.setState({ allergies: e.target.value});
 	}
 
 	updateSong1(e, type) {
@@ -145,6 +148,8 @@ class Form extends Component {
 		this.setState({ loading: true });
 
 		let obj = {
+			attending: !this.state.cantAttend,
+			allergies: this.state.allergies,
 			guest1: this.state.guest1,
 			guest2: this.state.guest2,
 			phone: this.state.phone,
@@ -210,6 +215,7 @@ class Form extends Component {
 		const formFields = {
 			email: this.state.email,
 			phone: this.state.phone,
+			allergies: this.state.allergies,
 			guest1: this.state.guest1,
 			guest2: this.state.guest2,
 			song1: this.state.song1,
@@ -231,7 +237,7 @@ class Form extends Component {
 
 				<Dialog
 					overlayStyle={{ opacity: .1 }}
-					title="Please Verify Information"
+					title="Please Verify Your Information"
 					actions={actions}
 					modal={false}
 					autoScrollBodyContent={true}
@@ -245,9 +251,21 @@ class Form extends Component {
 
 
 				<Dialog overlayStyle={{ opacity: .1 }} actions={actionSuccessOrFailure} open={this.state.openDialogSuccess}>
-					You successfully RSVP to Jacque's and Kemel's wedding! <br />
-					You can expect an email confirming from jacqueandkemelwedding@gmailcom<br />
-					(We will also send you a reminder email a month before the date)<br />
+					{
+						this.state.cantAttend ? (
+							<p>
+								It won't be the same without you!<br />
+								You can expect an email confirming from jacqueandkemelwedding@gmailcom<br />
+							</p>
+						) : (
+							<p>
+								You successfully RSVP'd to Jacque and Kemel's wedding! <br />
+								You can expect a conformation email from jacqueandkemelwedding@gmail.com<br />
+								(We will also send you a reminder email a month before the date)<br />
+							</p>
+						)
+
+					}
 
 					See you there!
 					</Dialog>
@@ -264,54 +282,54 @@ class Form extends Component {
 
 						<div className={styles.attending}>
 							<Checkbox
+								style={{width: '80px'}}
 								checked={this.state.cantAttend}
 								onClick={(e) => this.handleChange(e)}
 								value="cantAttend"
 							/>
-							<p >Check me if you cant attend but want to send best wishes to Jacque and Kemel</p>
+							<p>Check me if you can't attend but want to send your best wishes to Jacque and Kemel</p>
 						</div>
 
-						<h3>Guest(s) Attending</h3>
-						<div className={styles.double}>
-							<div>
-								<div>
-									<TextField id="email" hintText="email@email.com" floatingLabelText="Email" onChange={(e) => this.updateEmail(e)}/>
-								</div>
+						<h3>Your Information</h3>
+						<div className={styles.guestContainer}>
+							<div className={styles.inputContainer}>
+								<TextField required id="email" hintText="email@email.com" floatingLabelText="Email" onChange={(e) => this.updateEmail(e)}/>
 							</div>
-							<div>
-								<div>
-									<TextField id="phone" hintText="303-555-5555" floatingLabelText="Phone Number" onChange={(e) => this.updatePhone(e)}/>
-								</div>
+							<div className={styles.inputContainer}>
+								<TextField id="phone" hintText="303-555-5555" floatingLabelText="Phone Number" onChange={(e) => this.updatePhone(e)}/>
 							</div>
-						</div>
-							<div className={this.state.plusOne ? styles.double : '' }>
-								<div>
-									<div>
-										<TextField id="guest1" hintText="Full Name" floatingLabelText="First Guest" onChange={(e) => this.updateGuest1(e)} />
+							<div className={styles.inputContainer}>
+								<TextField id="allergy" hintText="Allergies" floatingLabelText="Any Allergies?" onChange={(e) => this.updatAlleries(e)} />
+							</div>
+							<div className={styles.inputContainer}>
+								<TextField required id="guest1" hintText="Full Name" floatingLabelText="Your Name" onChange={(e) => this.updateGuest1(e)} />
+							</div>
+							{this.state.plusOne
+								? (
+									<div className={styles.row}>
+										<div className={styles.marginLeft}>
+											<TextField id="guest2" hintText="Full Name" floatingLabelText="Their Name" onChange={(e) => this.updateGuest2(e)} />
+										</div>
+										<div onClick={() => this.handlePlusOne()} className={styles.pointer}>
+											<Delete />
+										</div>
 									</div>
+								)
+								: null
+							}
+						</div>
+						{this.state.plusOne
+							? null
+							: (
+								<div className={styles.add} onClick={() => this.handlePlusOne()}>
+									<RaisedButton label="Add A Plus One" />
 								</div>
-								{this.state.plusOne
-									? (
-										<div className={styles.row}>
-											<div>
-												<TextField id="guest2" hintText="Full Name" floatingLabelText="Second Guest" onChange={(e) => this.updateGuest2(e)} />
-											</div>
-											<div onClick={() => this.handlePlusOne()} className={styles.pointer}>
-												<Delete />
-											</div>
-										</div>
-									)
-									: (
-										<div className={styles.add} onClick={() => this.handlePlusOne()}>
-											<RaisedButton label="Add A Plus One" />
-										</div>
-									)
-								}
-							</div>
+							)
+						}
 					</div>
 					{!this.state.cantAttend ? (
 							<div className={`${ styles.songs }`}>
-								<h3>Song Request</h3>
+								<h3>Song Request (optional)</h3>
 								<div className={styles.row}>
 									<div className={styles.double}>
 										<div className={styles.song}>
@@ -371,7 +389,13 @@ class Form extends Component {
 						)
 					}
 					<div onClick={() => this.openDialog()} className={styles.submit}>
-						<RaisedButton label={this.state.text} />
+						{
+							this.state.cantAttend ? (
+								<RaisedButton label="Send best wishes" />
+							) : (
+								<RaisedButton label={this.state.text} />
+							)
+						}
 					</div>
 				</div>
 
@@ -385,23 +409,53 @@ const VerifyFrom = ({ formFields }) => {
 
 	return (
 		<div className={styles.dialog}>
-			<h2>{formFields.email}</h2>
-			<h2>{formFields.phone}</h2>
-			<h2>{formFields.guest1}</h2>
-			<h2>{formFields.guest2}</h2>
-			<h2>{formFields.song1.title}</h2>
-			<h2>{formFields.song1.artist}</h2>
-			{formFields.song2 ? (
-				<div>
-					<h2>{formFields.song2.title}</h2>
-					<h2>{formFields.song2.artist}</h2>
+			<div className={styles.dialogForm}>
+				<h1 className={styles.dialogFormTitle}>Email: </h1>
+				<h3>{formFields.email}</h3>
+			</div>
+			<div className={styles.dialogForm}>
+				<h1 className={styles.dialogFormTitle}>Phone:</h1>
+				<h3>{formFields.phone}</h3>
+			</div>
+			{formFields.allergies ? (
+				<div className={styles.dialogForm}>
+					<h1 className={styles.dialogFormTitle}>Allergies:</h1>
+					<h3>{formFields.allergies}</h3>
+				</div>
+			)
+				: null}
+			<div className={styles.dialogForm}>
+				<h1 className={styles.dialogFormTitle}>First Guest:</h1>
+				<h3>{formFields.guest1}</h3>
+			</div>
+			{formFields.guest2 ? (
+				<div className={styles.dialogForm}>
+					<h1 className={styles.dialogFormTitle}>Second Guest:</h1>
+					<h3>{formFields.guest2}</h3>
+				</div>
+			) 
+			 : null}
+			{formFields.song1 && formFields.song1.title && formFields.song1.artist ? (
+				<div className={styles.dialogForm}>
+					<h1 className={styles.dialogFormTitle}>First Song:</h1>
+					<h3>{formFields.song1.title}</h3>
+					<h3>{formFields.song1.artist}</h3>
+				</div>
+			) 
+			: null}
+			{formFields.song2 && formFields.song2.title && formFields.song2.artist? (
+				<div className={styles.dialogForm}>
+					<h1 className={styles.dialogFormTitle}>Second Song:</h1>
+					<h3>{formFields.song2.title}</h3>
+					<h3>{formFields.song2.artist}</h3>
 				</div>
 			) 
 			: null }
-			{formFields.song3 ? (
-				<div>
-					<h2>{formFields.song3.title}</h2>
-					<h2>{formFields.song3.artist}</h2>
+			{formFields.song3 && formFields.song3.title && formFields.song3.artist ? (
+				<div className={styles.dialogForm}>
+					<h1 className={styles.dialogFormTitle}>Third Song:</h1>
+					<h3>{formFields.song3.title}</h3>
+					<h3>{formFields.song3.artist}</h3>
 				</div>
 			) 
 			: null }

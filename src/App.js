@@ -13,7 +13,6 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div className="App">
-          {/* <div className="header">Jacque and Kemel</div> */}
           <Route path='/' exact component={HomePage} />
           <Route path='/rsvp' exact component={Rsvp} />
           <Route path='/penguins' exact component={DataView} />

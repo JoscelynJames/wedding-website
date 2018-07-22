@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Hero.css';
 import { withRouter } from 'react-router';
-import RaisedButton from 'material-ui/RaisedButton';
 
 class Hero extends Component {
 

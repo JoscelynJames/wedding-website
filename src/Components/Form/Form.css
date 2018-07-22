@@ -47,6 +47,19 @@
 	align-items: center;
 }
 
+.dialogForm {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.dialogFormTitle {
+	width: 200px;
+}
+
 .loading {
 	height: 200px;
 	width: 200px;
@@ -70,6 +83,31 @@
 .attending {
 	display: flex;
 	flex-direction: row;
-	/* width: 50vw; */
 	align-items: center;
+}
+
+.add {
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.checkbox {
+	width: 100px;
+}
+
+.guestContainer {
+	display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 90%;
+}
+
+.inputContainer {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.marginLeft {
+	margin-left: 40px;
 }

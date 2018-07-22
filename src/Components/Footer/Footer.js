@@ -4,7 +4,7 @@ import mapMarker from '../../assets/imgs/map-marker.svg';
 import facebook from '../../assets/imgs/facebook.svg';
 import instagram from '../../assets/imgs/instagram.svg';
 import twitter from '../../assets/imgs/twitter.svg';
-import spotify from '../../assets/imgs/spotify.svg';
+// import spotify from '../../assets/imgs/spotify.svg';
 import GoogleMapReact from 'google-map-react';
 
 
@@ -64,19 +64,20 @@ class Footer extends Component {
 							</div>
 						</div>
 					</a>
+					#NewlyBLue on : 
 					<div className={styles.socialMedia}>
-						<a href="">
+						{/* <a href=""> */}
 							<img className={styles.icon} src={facebook} alt="facebook" />
-						</a>
-						<a href="">
+						{/* </a> */}
+						{/* <a href=""> */}
 							<img className={styles.icon} src={instagram} alt="instagram" />
-						</a>
-						<a href="">
+						{/* </a> */}
+						{/* <a href=""> */}
 							<img className={styles.icon} src={twitter} alt="twitter" />
-						</a>
-						<a href="">
+						{/* </a> */}
+						{/* <a href="">
 							<img className={styles.icon} src={spotify} alt="twitter" />
-						</a>
+						</a> */}
 					</div>
 				</div>
 			</div>

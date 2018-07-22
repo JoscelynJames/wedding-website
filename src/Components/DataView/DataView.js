@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './DataView.css';
 import api from '../../api/apiCalls';
 import { withRouter } from 'react-router';
 
@@ -30,6 +31,19 @@ class DataView extends Component {
             .then(res => this.setState({ songs: res.data }) );
     }
 
+    countGuest() {
+        var total = 0;
+
+        this.state.guests.forEach(guest => {
+            if (guest.attending) {
+                total++
+                if (guest.guest2) total++
+            }
+        })
+
+        return total;
+    }
+
     render() {
         if (!this.state.guests) return <h1>Loading</h1>
 
@@ -40,26 +54,30 @@ class DataView extends Component {
                     <TableHeader>
                         <TableRow>
                             <TableHeaderColumn>ID</TableHeaderColumn>
-                            <TableHeaderColumn>Name</TableHeaderColumn>
-                            <TableHeaderColumn>Status</TableHeaderColumn>
+                            <TableHeaderColumn>First Guest</TableHeaderColumn>
+                            <TableHeaderColumn>Second Guest</TableHeaderColumn>
                             <TableHeaderColumn>Phone</TableHeaderColumn>
                             <TableHeaderColumn>Email</TableHeaderColumn>
+                            <TableHeaderColumn>Allergies</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {this.state.guests.map((guest, index) => {
                             return (
-                                <TableRow key={index}>
+                                <TableRow key={index} className={guest.attending ? styles.isAttending : styles.notAttending}>
                                     <TableRowColumn>{index}</TableRowColumn>
                                     <TableRowColumn>{guest.guest1}</TableRowColumn>
                                     <TableRowColumn>{guest.guest2}</TableRowColumn>
                                     <TableRowColumn>{guest.phone}</TableRowColumn>
                                     <TableRowColumn>{guest.email}</TableRowColumn>
+                                    <TableRowColumn>{guest.allergies}</TableRowColumn>
                                 </TableRow>
                             )
                         })}
                     </TableBody>
                 </Table>
+
+                <h1>Total Guest: {this.countGuest()}</h1>
                 <h1>Songs</h1>
                 <Table>
                     <TableHeader>

@@ -17,14 +17,18 @@ class HomePage extends Component {
 	routeToRsvp() {
 		this.props.history.push('/rsvp');
 	}
+	routeToData() {
+		this.props.history.push('/penguins');
+	}
 
 	render () {
 		return (
 			<div>
+				<div className={styles.secret} onClick={() => this.routeToData()}></div>
 				<div className={styles.headerContainer}>
 					<div className={styles.header}>
 						<div>
-							<img className={styles.headerImage} src={jandk} />
+							<img className={styles.headerImage} src={jandk} alt="J & K" />
 						</div>
 						<div className={styles.button} onClick={() => this.routeToRsvp()}>
 							<RaisedButton label="RSVP" />
