@@ -40,7 +40,7 @@ const HotelInfo = () => {
               https://goldenevergreenhotel.com
             </a>
           </p>
-          <p className={styles.info}>1.5 miles away from Cheif Hosa Lodge</p>
+          <p className={styles.info}>1.5 miles away from Chief Hosa Lodge</p>
           <p className={styles.info}>
             <a href={pdf} download="TransportationInfo.pdf">
               Group Transportation PDF
@@ -53,7 +53,7 @@ const HotelInfo = () => {
           </p>
           <p className={styles.info}>
             <span className={styles.bold}>Please call to book your room</span>{" "}
-            under the Bule Wedding to recive discounted rate.
+            under the Blue Wedding to receive discounted rate.
           </p>
         </div>
       </div>
@@ -66,7 +66,7 @@ const GiftInfo = () => {
     <Paper elevation={4} className={styles.paperGift}>
       <div className={styles.paperDetails}>
         <div className={styles.row}>
-          <h3 className={styles.details}>Gift Regestry:</h3>
+          <h3 className={styles.details}>Gift Registry:</h3>
           <div className={styles.giftInfo}>
             <a
               href="https://www.zola.com/registry/jacquelineandkemel"
@@ -109,7 +109,7 @@ const GeneralInfo = () => {
         </div>
         <div className={styles.row}>
           <h3 className={styles.header}>Where?</h3>
-          <p className={styles.info}>Cheif Hosa Lodge in Golden, Colorado</p>
+          <p className={styles.info}>Chief Hosa Lodge in Golden, Colorado</p>
         </div>
         <div className={styles.row}>
           <h3 className={styles.header}>Dress Code?</h3>
