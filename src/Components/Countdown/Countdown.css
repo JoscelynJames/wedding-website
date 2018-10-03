@@ -1,41 +1,37 @@
 .container {
-	text-align: center;
-	height: 45vh;
-	width: 80vw;
-	/* margin-left: auto;
+  text-align: center;
+  height: 45vh;
+  width: 80vw;
+  /* margin-left: auto;
 	margin-right: auto; */
 }
 
 .card {
-	font-size: 70px;
-	font-family: 'Amatic SC', cursive;
-	padding: 12px
+  font-size: 70px;
+  font-family: "Amatic SC", cursive;
+  padding: 12px;
 }
 
 .time {
-	display: flex;
-	justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .days {
-	border-bottom: 1px dashed rgb(182, 182, 182);
+  border-bottom: 1px dashed rgb(182, 182, 182);
 }
 
 .text {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 
-@media(min-width: 766px) {
-	.container {
-		width: 38vw;
-		height: 40vh;
-	}
+@media (min-width: 766px) {
+  .container {
+    width: 38vw;
+    height: 245px;
+  }
 
-	.card {
-		font-size: 6rem;
-	}
-
-	.text {
-		font-size: 1.5rem;
-	}
+  .text {
+    font-size: 1.5rem;
+  }
 }

@@ -37,7 +37,7 @@ class HomePage extends Component {
 				</div>
 				<Hero />
 				<div className={styles.container}>
-					<Countdown />
+					{/* <Countdown /> */}
 					<Gift />
 				</div>
 				<Footer />

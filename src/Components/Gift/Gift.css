@@ -1,52 +1,140 @@
 .container {
-	height: 100%;
-	width: 80vw;
-    display: flex;
-    flex-flow: column;
-	align-items: center;
-	padding-bottom: 30px;
-	text-align: center;
+  height: 100%;
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 30px;
+  text-align: center;
 }
 
 .row {
-	width: 80%;
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
+  /* width: 80%; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .details {
-	border-bottom: 1px dashed;
-    width: 100%;
-	text-align: center;
-	padding-bottom: 5px;
-}
-
-.header {
-	width: 30%;
+  border-bottom: 1px dashed;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 5px;
 }
 
 .info {
-	width: 70%;
+  width: 70%;
+  margin: 7px;
 }
 
-@media(min-width: 1024px) {
-	.container {
-		width: 40vw;
-	}
+.giftInfo {
+  width: 70%;
+  height: 333px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
-@media(max-width: 603px) {
-	.row {
-		flex-direction: column;
-		align-items: center;
-	}
+.giftReg {
+  padding: 0px 20px;
+  width: 30vw;
+}
 
-	.header {
-	width: fit-content;
-	}
+.button {
+  margin-top: 40px;
+}
 
-	.info {
-		width: fit-content;
-	}
+.paperHotel {
+  margin: 15px;
+  width: 47%;
+}
+
+.paperGift {
+  margin: 15px;
+  width: 25%;
+  height: 360px;
+}
+
+.paperCountDown {
+  margin: 15px;
+  width: 45%;
+  height: 363px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paperGeneral {
+  margin: 15px;
+  width: 60vw;
+}
+
+.paperDetails {
+  padding: 20px;
+}
+
+.header {
+  margin-right: 5px;
+}
+
+a {
+  color: rgb(64, 116, 206);
+}
+
+.giftImg {
+  width: 163px;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 17.5px;
+}
+@media (max-width: 1004px) {
+  .paperGeneral {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1004px) {
+  .paperGeneral,
+  .paperDetails,
+  .paperCountDown,
+  .paperGift,
+  .paperHotel {
+    width: 100%;
+  }
+
+  .details {
+    width: 90%;
+  }
+
+  .row {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* .container {
+    width: 40vw;
+  } */
+}
+
+@media (max-width: 603px) {
+  .container {
+    justify-content: center;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    width: fit-content;
+  }
+
+  .info {
+    width: fit-content;
+  }
 }
