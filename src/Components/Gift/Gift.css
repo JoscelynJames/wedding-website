@@ -53,7 +53,7 @@
 .paperGift {
   margin: 15px;
   width: 25%;
-  height: 360px;
+  height: 335px;
 }
 
 .paperCountDown {
@@ -72,6 +72,7 @@
 
 .paperDetails {
   padding: 20px;
+  height: 373px;
 }
 
 .header {

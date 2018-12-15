@@ -30,31 +30,18 @@ const HotelInfo = () => {
   return (
     <Paper elevation={4} className={styles.paperHotel}>
       <div className={styles.paperDetails}>
-        <h2 className={styles.details}> Comfort Inn Suites </h2>
+        <h2 className={styles.details}> SpringHill Suites by Marriott</h2>
         <div className={styles.row}>
           <p className={styles.info}>
-            29300 U.S. Highway 40 Evergreen, CO 80439
+            6845 W 103rd Avenue, Westminster, CO 80021
           </p>
           <p className={styles.info}>
-            <a href="https://goldenevergreenhotel.com/">
-              https://goldenevergreenhotel.com
+            <a href="https://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Blue%20Wedding%20January%202019%5EDENWM%60BWJBWJA%7CBWJBWJB%60112.00%60USD%60false%606%601/17/19%601/20/19%6012/17/18&app=resvlink&stop_mobi=yes">
+              Book your room here!
             </a>
           </p>
-          <p className={styles.info}>1.5 miles away from Chief Hosa Lodge</p>
-          <p className={styles.info}>
-            <a href={pdf} download="TransportationInfo.pdf">
-              Group Transportation PDF
-            </a>
-          </p>
-          <p className={styles.info}>$125 - $140 per night</p>
-          <p className={styles.info}>
-            Includes: complementary hot breakfast, indoor pool indoor and
-            outdoor hot tub, fitness center,
-          </p>
-          <p className={styles.info}>
-            <span className={styles.bold}>Please call to book your room</span>{" "}
-            under the Blue Wedding to receive discounted rate.
-          </p>
+          <p className={styles.info}>(303) 464-1999</p>
+          <p className={styles.info}>King or Double Queen $112 per night</p>
         </div>
       </div>
     </Paper>
@@ -103,8 +90,7 @@ const GeneralInfo = () => {
         <div className={styles.row}>
           <h3 className={styles.header}>When?</h3>
           <p className={styles.info}>
-            January 18th, 2019 <br /> Ceremony starts at 4pm <br /> Reception
-            starts at 5pm
+            January 18th, 2019 <br /> Reception starts at 5pm
           </p>
         </div>
         <div className={styles.row}>
@@ -118,7 +104,7 @@ const GeneralInfo = () => {
         <div className={styles.row}>
           <h3 className={styles.header}>Is there food?</h3>
           <p className={styles.info}>
-            Cheese, Charcuterie and biker Jim’s hot dogs
+            Cheese, Charcuterie and Biker Jim’s hot dogs
           </p>
         </div>
       </div>
